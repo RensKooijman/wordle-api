@@ -1,7 +1,14 @@
 <?php
-    namespace Modal;
+    namespace Model;
 
-    class Woorder {
-        
+    class Woorden extends model
+    {
+        protected static string $tableName = "woorden";
+        protected static string $primaryKey = "id";
+    
+        public function __construct()
+        {
+            parent::__construct(Database::getInstance());
+        }
     }
 ?>
