@@ -3,8 +3,8 @@
 
     class Woorden extends model
     {
-        protected static string $tableName = "woorden";
-        protected static string $primaryKey = "id";
+        protected static string $tableName = "words";
+        protected static string $primaryKey = "word_id";
     
         public function __construct()
         {

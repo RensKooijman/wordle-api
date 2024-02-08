@@ -4,7 +4,7 @@
     class Accounts extends model
     {
         protected static string $tableName = "account";
-        protected static string $primaryKey = "id";
+        protected static string $primaryKey = "account_id";
     
         public function __construct()
         {
