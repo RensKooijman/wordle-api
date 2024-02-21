@@ -1,7 +1,7 @@
 <?php
 
 // Gebaseerd op: http://codetuto.com/2013/07/creating-a-php-website-using-mvc-4-creating-model-class/
-namespace Model;
+namespace Models;
 
 use PDO;
 
@@ -139,8 +139,7 @@ class Model
         $condition = array(),
         $order = null,
         $startIndex = null,
-        $count = null,
-        $extraQuery
+        $count = null
     ): array {
         $query = "SELECT {$fields} FROM " . static::$tableName;
         if (!empty($condition)) {
@@ -150,7 +149,6 @@ class Model
             }
         }
         $query = rtrim($query, ' AND ');
-        $query .= " " . $extraQuery . " ";
         if ($order) {
             $query .= " ORDER BY " . $order;
         }

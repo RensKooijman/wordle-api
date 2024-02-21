@@ -1,7 +1,7 @@
 <?php
-    namespace Model;
+    namespace Models;
 
-    class Accounts extends model
+    class Accounts extends Model
     {
         protected static string $tableName = "account";
         protected static string $primaryKey = "account_id";

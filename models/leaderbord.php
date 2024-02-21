@@ -1,9 +1,10 @@
 <?php
-    namespace Model;
 
-    use Model\Accounts;
+    namespace Models;
 
-    class Leaderbord extends model
+    use Models\Accounts;
+
+    class Leaderbord extends Model
     {
         protected static string $tableName = "leaderbord";
         protected static string $primaryKey = "leaderbord_id";

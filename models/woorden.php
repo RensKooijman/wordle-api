@@ -1,7 +1,7 @@
 <?php
-    namespace Model;
+    namespace Models;
 
-    class Woorden extends model
+    class Woorden extends Model
     {
         protected static string $tableName = "words";
         protected static string $primaryKey = "word_id";
