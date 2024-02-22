@@ -299,13 +299,6 @@ ALTER TABLE `words`
 -- Constraints for dumped tables
 --
 
---
--- Constraints for table `accounts`
---
-ALTER TABLE `accounts`
-  ADD CONSTRAINT `Accounts_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `leaderboard` (`leaderboard_id`);
-
---
 -- Constraints for table `leaderboard`
 --
 ALTER TABLE `leaderboard`
