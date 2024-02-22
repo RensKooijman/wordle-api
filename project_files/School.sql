@@ -34,8 +34,8 @@ CREATE TABLE `accounts` (
   `account_id` int(20) NOT NULL,
   `first_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` int(11) NOT NULL,
-  `password` int(11) NOT NULL,
+  `email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -299,13 +299,6 @@ ALTER TABLE `words`
 -- Constraints for dumped tables
 --
 
---
--- Constraints for table `accounts`
---
-ALTER TABLE `accounts`
-  ADD CONSTRAINT `Accounts_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `leaderboard` (`leaderboard_id`);
-
---
 -- Constraints for table `leaderboard`
 --
 ALTER TABLE `leaderboard`

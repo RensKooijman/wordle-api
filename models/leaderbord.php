@@ -6,8 +6,8 @@
 
     class Leaderbord extends Model
     {
-        protected static string $tableName = "leaderbord";
-        protected static string $primaryKey = "leaderbord_id";
+        protected static string $tableName = "leaderboard";
+        protected static string $primaryKey = "leaderboard_id";
     
         public function __construct()
         {

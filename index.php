@@ -2,7 +2,7 @@
 
 require_once 'vendor/autoload.php';
 
-use Models\Woorden;
+use Models\Leaderbord;
 
 class GetRequestHandler
 {
@@ -11,7 +11,7 @@ class GetRequestHandler
     
     public function processRequest(): void
     {
-        $obj = new Woorden();
+        $obj = new Leaderbord();
         $arrResults = $obj->getAll();
         $result = [];
         foreach ($arrResults as $objResult) {
