@@ -7,22 +7,37 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use Custom\HttpRequest;
 
-final class HttpRequestTest extends TestCase
+class HttpRequestTest extends TestCase
 {
-	public function testGetRequest()
-	{
-		$mock = new MockHandler([
-			new Response(200, [], 'Hello, World'),
-			new Response(404, [], 'Not Found'),
-		]);
+    // Assuming you already have a testGetRequest method here
 
-		$handlerStack = HandlerStack::create($mock);
-		$client = new Client(['handler' => $handlerStack]);
+    public function testPostRequest()
+    {
+        // Create a mock handler to return a fixed response for the POST request
+        $mock = new MockHandler([
+            new Response(200, [], json_encode(['message' => 'Data received'])), // Simulate a JSON response
+        ]);
 
-		$httpRequest = new HttpRequest($client);
+        $handlerStack = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handlerStack]);
 
-		$reponse = $httpRequest->getRequest('http://example.com');
+        // Instantiate your HttpRequest class with the mock client
+        $httpRequest = new HttpRequest($client); // Adjust your class for dependency injection if needed
 
-		$this->assertEquals('Hello, World', $reponse);
-	}
+        // Define the URL and data for the POST request
+        $url = 'http://example.com/post-endpoint';
+        $data = ['key' => 'value'];
+
+        // Test the postRequest method
+        $response = $httpRequest->postRequest($url, $data); // Ensure your method accepts data for the POST body
+
+        // Decode the JSON response for assertion
+        $decodedResponse = json_decode($response, true);
+
+        // Assert that the response contains the expected data
+        $this->assertIsArray($decodedResponse);
+        $this->assertArrayHasKey('message', $decodedResponse);
+        $this->assertEquals('Data received', $decodedResponse['message']);
+    }
 }
+
