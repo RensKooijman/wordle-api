@@ -9,6 +9,7 @@ class Words extends Model
 {
     use HasFactory;
 
+    protected $table = 'words';
     /**
      * The attributes that are mass assignable.
      *

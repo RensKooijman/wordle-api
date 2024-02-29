@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\WordController;
+
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -16,3 +18,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/word', 'WordController@getWord');
+
+$router->get('/words/all', 'WordController@getAllWords');
