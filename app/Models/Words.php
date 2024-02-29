@@ -16,7 +16,6 @@ class Words extends Model
      * @var string[]
      */
     protected $fillable = [
-        'word_id',
         'words',
     ];
     /**
