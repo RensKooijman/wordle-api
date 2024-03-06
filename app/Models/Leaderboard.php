@@ -15,6 +15,7 @@ class Leaderboard extends Model
     use Authenticatable, Authorizable, HasFactory;
 
     protected $table = 'leaderboard';
+    protected $primaryKey = 'leaderboard_id';
 
     public function accounts(): BelongsTo
     {

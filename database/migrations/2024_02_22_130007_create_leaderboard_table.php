@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('leaderboard_id');
             $table->integer('score');
             $table->foreignId('account_id');
+            $table->timestamps();
         });
     }
 

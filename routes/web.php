@@ -25,4 +25,6 @@ $router->get('/word', 'WordController@getWord');
 $router->get('/words/all', 'WordController@getAllWords');
 
 $router->get('/words/random', 'WordController@getWordOfDay');
+
 $router->get('/leaderboard', 'LeaderboardController@getAll');
+$router->post('/leaderboard', 'LeaderboardController@put');
