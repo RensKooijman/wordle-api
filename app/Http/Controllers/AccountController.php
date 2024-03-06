@@ -18,6 +18,11 @@ class AccountController extends Controller
     public function __construct()
     {}
 
+    public function getAllUsers(){
+        $account = Accounts::select('account_id', 'first_name', 'last_name', 'email', 'is_admin')->get();
+        return response()->json(['user' => $account]);
+    }
+
     public function getUser($id){
         $account = Accounts::select('first_name', 'last_name', 'email', 'is_admin')->where('account_id', $id)->get();
         return response()->json(['user' => $account]);
