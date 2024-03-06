@@ -27,4 +27,8 @@ class LeaderboardController extends Controller
         Leaderboard::updateOrCreate(['account_id' => $arr['id']], ['score' => DB::raw('GREATEST(score, ' . $arr['score'] . ')')]);
         return response()->json(['status' => 'success']);
     }
+    public function delete($id){
+        Leaderboard::where(['account_id', $id])->delete();
+        return response()->json(['status' => 'success']);
+    }
 }
