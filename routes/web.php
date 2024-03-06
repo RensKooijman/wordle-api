@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WordController;
+use App\Http\Controllers\LeaderboardController;
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
@@ -24,3 +25,4 @@ $router->get('/word', 'WordController@getWord');
 $router->get('/words/all', 'WordController@getAllWords');
 
 $router->get('/words/random', 'WordController@getWordOfDay');
+$router->get('/leaderboard', 'LeaderboardController@getAll');

@@ -14,7 +14,9 @@ class Leaderboard extends Model
 {
     use Authenticatable, Authorizable, HasFactory;
 
-    public function account(): BelongsTo
+    protected $table = 'leaderboard';
+
+    public function accounts(): BelongsTo
     {
         return $this->belongsTo(Accounts::class);
     }

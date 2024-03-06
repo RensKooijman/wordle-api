@@ -19,7 +19,7 @@ class Accounts extends Model
      * @var string[]
      */
     protected $fillable = [
-        'accout_id',
+        'account_id',
         'first_name',
         'last_name',
         'email',
