@@ -30,5 +30,6 @@ $router->get('/leaderboard', 'LeaderboardController@getAll');
 $router->post('/leaderboard', 'LeaderboardController@put');
 
 $router->get('/user/{id}', 'AccountController@getUser');
-
+$router->post('/user/create', 'AccountController@makeUser');
+$router->post('/user/{id}/validate', 'AccountController@validateUser');
 $router->get('/user/{id}/delete', 'AccountController@deleteUser');
