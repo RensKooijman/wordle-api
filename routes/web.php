@@ -16,9 +16,11 @@ use App\Http\Controllers\WordController;
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return view('index');
 });
 
 $router->get('/word', 'WordController@getWord');
 
 $router->get('/words/all', 'WordController@getAllWords');
+
+$router->get('/words/random', 'WordController@getWordOfDay');

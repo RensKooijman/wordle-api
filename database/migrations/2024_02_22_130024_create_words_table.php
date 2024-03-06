@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('words', function (Blueprint $table) {
             $table->id('word_id');
             $table->string('words');
+            $table->boolean('is_used')->default(false);
+            $table->date('used_on')->nullable();
             $table->timestamps();
         });
     }

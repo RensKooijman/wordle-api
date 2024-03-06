@@ -10,6 +10,7 @@ class Words extends Model
     use HasFactory;
 
     protected $table = 'words';
+    protected $primaryKey = 'word_id';
     /**
      * The attributes that are mass assignable.
      *
