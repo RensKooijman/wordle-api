@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Accounts;
 use Illuminate\Http\Request;
+use App\Models\Leaderboard;
 use DB;
 
 class AccountController extends Controller
@@ -19,5 +20,11 @@ class AccountController extends Controller
     public function getUser($id){
         $account = Accounts::select('first_name', 'last_name', 'email', 'is_admin')->where('account_id', $id)->get();
         return response()->json(['user' => $account]);
+    }
+
+    public function deleteUser($id){
+        Accounts::where('account_id', $id)->delete();
+        Leaderboard::where('account_id', $id)->delete();
+        return response()->json(['status' => 'success']);
     }
 }
