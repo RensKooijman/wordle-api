@@ -38,12 +38,7 @@ class AccountController extends Controller
         $arr = $request->all();
         $password = Accounts::select('password')->where('account_id', $id)->first();
         $bool = hash::check($arr['password'], $password->password);
-        if($bool == true){
-            return response()->json(['validated' => 1]);
-        }else{
-            return response()->json(['validated' => 0]);
-        }
-
+        return response()->json(['validated' => $bool]);
     }
 
     public function deleteUser($id){
