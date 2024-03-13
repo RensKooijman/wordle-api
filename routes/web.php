@@ -34,6 +34,7 @@ $router->group( ['middleware' => 'ApiToken'], function () use ($router) {
     $router->get('/user', 'AccountController@getAllUsers');
     $router->get('/user/{id}', 'AccountController@getUser');
     $router->post('/user/create', 'AccountController@makeUser');
-    $router->post('/user/{id}/validate', 'AccountController@validateUser');
+    $router->post('/user/{id}/validate', 'AccountController@validateUser');    
+    $router->post('/user/{id}/change', 'AccountController@changeUser');
     $router->get('/user/{id}/delete', 'AccountController@deleteUser');
 });

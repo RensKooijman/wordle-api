@@ -46,4 +46,9 @@ class AccountController extends Controller
         Leaderboard::where('account_id', $id)->delete();
         return response()->json(['status' => 'success']);
     }
+
+    public function changeUser($id, Request $request){
+        $arr = $request->all();
+        Accounts::find($id)->update(['first_name' => $arr['first-name'], 'last_name' => $arr['last-name'], 'email' => $arr['email']]);
+    }
 }

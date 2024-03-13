@@ -13,6 +13,8 @@ class Accounts extends Model
 {
     use Authenticatable, Authorizable, HasFactory;
 
+
+    protected $primaryKey = 'account_id';
     /**
      * The attributes that are mass assignable.
      *
