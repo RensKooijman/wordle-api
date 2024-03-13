@@ -73,7 +73,8 @@ $app->configure('app');
 */
 
 $app->routeMiddleware([
-    'ApiToken' => App\Http\Middleware\ApiToken::class
+    'ApiToken' => App\Http\Middleware\ApiToken::class,
+    'Limiter' => App\Http\Middleware\ThrottleRequests::class
 ]);
 
 // $app->middleware([
