@@ -20,18 +20,20 @@ $router->get('/', function () use ($router) {
     return view('index');
 });
 
-$router->get('/word', 'WordController@getWord');
+$router->group( ['middleware' => 'ApiToken'], function () use ($router) {
+    $router->get('/word', 'WordController@getWord');
 
-$router->get('/words/all', 'WordController@getAllWords');
+    $router->get('/words/all', 'WordController@getAllWords');
 
-$router->get('/words/random', 'WordController@getWordOfDay');
+    $router->get('/words/random', 'WordController@getWordOfDay');
 
-$router->get('/leaderboard', 'LeaderboardController@getAll');
-$router->post('/leaderboard', 'LeaderboardController@put');
-$router->get('/leaderboard/{id}/delete', 'LeaderboardController@delete');
+    $router->get('/leaderboard', 'LeaderboardController@getAll');
+    $router->post('/leaderboard', 'LeaderboardController@put');
+    $router->get('/leaderboard/{id}/delete', 'LeaderboardController@delete');
 
-$router->get('/user', 'AccountController@getAllUsers');
-$router->get('/user/{id}', 'AccountController@getUser');
-$router->post('/user/create', 'AccountController@makeUser');
-$router->post('/user/{id}/validate', 'AccountController@validateUser');
-$router->get('/user/{id}/delete', 'AccountController@deleteUser');
+    $router->get('/user', 'AccountController@getAllUsers');
+    $router->get('/user/{id}', 'AccountController@getUser');
+    $router->post('/user/create', 'AccountController@makeUser');
+    $router->post('/user/{id}/validate', 'AccountController@validateUser');
+    $router->get('/user/{id}/delete', 'AccountController@deleteUser');
+});

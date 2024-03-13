@@ -72,6 +72,10 @@ $app->configure('app');
 |
 */
 
+$app->routeMiddleware([
+    'ApiToken' => App\Http\Middleware\ApiToken::class
+]);
+
 // $app->middleware([
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
